@@ -29,3 +29,17 @@ font-family: 'Share Tech Mono', monospace; */
   width: 200px;
   height: 50px;
 }
+
+/* Demo Boxes */
+
+.demos {
+  text-align: center;
+}
+
+.demo-box {
+  margin: 100px 20px;
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  background-color: lightgray;
+}
