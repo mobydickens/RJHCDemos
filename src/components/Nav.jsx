@@ -4,10 +4,8 @@ class Nav extends Component {
     render() {
         return(
             <div>
-                <nav>
-                    <a href="#" class="navigation">Home</a>
-                    <a href="#" class="navigation">Demos</a>
-                    <header>RJHC Demos</header>
+                <nav className="navbar navbar-dark bg-primary">
+                    <span className="navbar-brand mb-0 h1">RJHC Demos</span>
                 </nav>
             </div>
         )

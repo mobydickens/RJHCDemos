@@ -1,16 +1,31 @@
+/* font-family: 'VT323', monospace;
+font-family: 'Share Tech Mono', monospace; */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Navigation and Header */
-
-nav {
-  height: 40px;
+.container {
+  margin-top: 65px;
+  text-align: center;
 }
 
-/* .navigation {
+/* Navigation and Header */
 
-} */
 
+/* Homepage */
+
+.app-title {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.homepage-demo {
+  display: block;
+  text-align: center; 
+  margin: auto;
+  margin-top: 50px;
+  width: 200px;
+  height: 50px;
+}

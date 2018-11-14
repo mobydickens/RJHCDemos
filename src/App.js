@@ -9,9 +9,9 @@ class App extends Component {
     this.state = {
       pages: [
         "Welcome", 
-        <EvenOdd />, 
-        <Sum />,
-        <Palindrome />
+        // <EvenOdd />, 
+        // <Sum />,
+        // <Palindrome />
       ]
     }
   }
@@ -19,8 +19,12 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <button class="homepage-demo">Try a Demo!</button>
+        <div className="container">
+          <h1 className="app-title">React JavaScript HTML CSS Demos</h1>
+          <button type="button" className="homepage-demo btn btn-warning">Try a Demo!</button>
+        </div>
       </div>
+      
     );
   }
 }
