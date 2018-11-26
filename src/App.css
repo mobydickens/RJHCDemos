@@ -27,19 +27,24 @@ font-family: 'Share Tech Mono', monospace; */
   border-radius: 3px;
 }
 
-/* Homepage */
+/* Home */
 
-.app-title {
+.title {
   font-family: 'Share Tech Mono', monospace;
+  margin-bottom: 50px;
 }
 
 .homepage-demo {
   display: block;
   text-align: center; 
   margin: auto;
-  margin-top: 50px;
   width: 200px;
   height: 50px;
+}
+
+/* Demo List (Demos Component) */
+.demo-list {
+  text-align: center;
 }
 
 /* Demo Boxes */
