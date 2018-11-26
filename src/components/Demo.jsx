@@ -9,10 +9,15 @@ class Demo extends Component {
         super(props)
         this.state = {
             demos: [
-                <Sum />,
-                <EvenOdd />
-            ],
-            index: 0
+                {
+                    component: <Sum />,
+                    name: "Sum"
+                },
+                {
+                    component: <EvenOdd />,
+                    name: "Even and Odd"
+                }
+            ]
         }
     }
 
@@ -24,12 +29,13 @@ class Demo extends Component {
             <div className="container">
                 <div className="demos">
                     {this.state.demos.map(demo => {
-                        if(this.props.match.params.name == demo) {
+                        if(this.props.match.params.name === demo.name) {
                             return(
-                                <div>
-                                    {demo}
+                                <div key={demo.name}>
+                                    {demo.component}
                                 </div>
-                        )}
+                            )
+                        }
                     })}
                 </div>
                 <Link to="/demos"><button>Back</button></Link>
@@ -39,3 +45,6 @@ class Demo extends Component {
 }
 
 export default Demo;
+
+//how to get names to match while looping over the components. Do I _have_ to use the names themselves in state? Or can I use the components?
+// demos[ {component: etc, name: etc}, ]
