@@ -14,6 +14,18 @@ font-family: 'Share Tech Mono', monospace; */
 
 /* Navigation and Header */
 
+.nav-links {
+  margin: 0 20px;
+  padding: 10px;
+  color: white;
+}
+
+.active {
+  font-weight: bold;
+  background-color: #3bb0dc;
+  padding: 10px;
+  border-radius: 3px;
+}
 
 /* Homepage */
 

@@ -1,34 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from './components/Nav.jsx';
-import Sum from './components/Sum.jsx';
+import { HashRouter as Router, Route, Switch} from 'react-router-dom';
+import Home from './components/Home.jsx';
+import Demos from './components/Demos.jsx';
+import About from './components/About.jsx';
+import NotFound from './components/NotFound.jsx';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      pages: [
-        "Welcome",
-         <Sum />, 
-        // <EvenOdd />, 
-        // <Palindrome />
-      ],
-      pageIndex: 1
-    }
-  }
   render() {
     return (
-      <div>
-        <Nav />
-        {this.state.pageIndex === 0 ? 
-          <div className="container">
-            <h1 className="app-title">React JavaScript HTML CSS Demos</h1>
-            <button type="button" className="homepage-demo btn btn-warning">Try a Demo!</button>
-          </div> 
-          : <Sum />}
-      </div>
-      
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+            <Route component={ Home } exact path="/" />
+            <Route component={ Demos } path="/demos"/>
+            <Route component={ About } path="/about" />
+            <Route component={ NotFound } />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
