@@ -7,6 +7,7 @@ import Demos from './components/Demos.jsx';
 import About from './components/About.jsx';
 import Demo from './components/Demo.jsx';
 import Math from './components/Math.jsx'
+// import MathDemos from './components/MathDemos.jsx';
 import NotFound from './components/NotFound.jsx';
 
 class App extends Component {
@@ -21,7 +22,7 @@ class App extends Component {
             <Route component={ Demos } path="/demos"/>
             <Route component={ About } path="/about" />
             <Route component={ Demo } path="/demo/:name" />
-            <Route component={ Math } path="/math/:name" />
+            <Route component={ Math } path="/math/:name" exact />
             <Route component={ NotFound } />
           </Switch>
         </div>

@@ -4,32 +4,32 @@ import demoArray from './demoArray';
 
 class Demos extends Component {
 
-    constructor(props) {
-        super(props); 
-        this.state = {
-            demos: demoArray
-        }
+  constructor(props) {
+    super(props); 
+    this.state = {
+      demos: demoArray
     }
+  }
 
-    render() {
-        let demoList = this.state.demos.map((demo, i) => {
-            return(
-                <div key={i}>
-                    <Link to={`/demo/${demo.name}`}>
-                        <li>{demo.name}</li>
-                    </Link>
-                </div>
-            )
-        })
-        return(
-            <div className="container">
-                <h2 className="demo-list title">All Demos:</h2>
-                <ul className="demo-list">
-                    {demoList}
-                </ul>
-            </div>
-        )
-    }
+  render() {
+    let demoList = this.state.demos.map((demo, i) => {
+      return(
+        <div key={i}>
+          <Link to={`/demo/${demo.name}`}>
+            <li>{demo.name}</li>
+          </Link>
+        </div>
+      )
+    })
+    return(
+      <div className="container">
+        <h2 className="demo-list title">All Demos:</h2>
+        <ul className="demo-list">
+          {demoList}
+        </ul>
+      </div>
+    )
+  }
 }
 
 export default Demos;

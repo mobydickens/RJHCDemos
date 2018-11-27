@@ -7,31 +7,28 @@ class Math extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        title: "Calculate the Sum",
         mathDemos: demoArray
       }
   }
 
   render() {
-
+    console.log(this.props.match.params.name, "in math component")
     return(
       <div className="mathbox">
         <div className="aside">
           {this.state.mathDemos.map((demo, index) => {
             if(demo.componentName === "mathDemos") {
-              console.log(demo.name);
               return(
                 <div key={index}>
                   <Link to={`/math/${demo.name}`}>{demo.name}</Link>
                 </div>
               )
-            } else {
-              console.log("not a match");
-            } 
+            }
           })}
         </div>
         <div className="demo-box">
             <h2>Basic Math Problems</h2>
+            <h3>{this.props.match.params.name}</h3>
         </div>
       </div>
     )
