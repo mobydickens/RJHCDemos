@@ -3,6 +3,7 @@ import Sum from './Sum.jsx';
 import EvenOdd from './EvenOdd.jsx';
 import Palindrome from './Palindrome.jsx';
 import Subtraction from './Difference.jsx';
+import Multiply from './Multiply.jsx';
 
 export default [
     {
@@ -20,5 +21,9 @@ export default [
     {
         component: <Palindrome />,
         name: "Palindrome"
+    },
+    {
+        component: <Multiply />,
+        name: "Multiply"
     }
 ]
