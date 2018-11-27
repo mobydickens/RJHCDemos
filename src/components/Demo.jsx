@@ -32,6 +32,3 @@ class Demo extends Component {
 }
 
 export default Demo;
-
-//how to get names to match while looping over the components. Do I _have_ to use the names themselves in state? Or can I use the components?
-// demos[ {component: etc, name: etc}, ]

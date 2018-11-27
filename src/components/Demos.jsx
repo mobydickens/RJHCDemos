@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import demoArray from './demoArray';
+import { Redirect } from 'react-router-dom';
 
 class Demos extends Component {
 
@@ -15,7 +16,8 @@ class Demos extends Component {
     let demoList = this.state.demos.map((demo, i) => {
       return(
         <div key={i}>
-          <Link to={`/demo/${demo.name}`}>
+          <Link 
+            to={`/demo/${demo.name}`}>
             <li>{demo.name}</li>
           </Link>
         </div>

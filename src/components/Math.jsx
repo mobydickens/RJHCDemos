@@ -12,7 +12,7 @@ class Math extends Component {
   }
 
   render() {
-    console.log(this.props.match.params.name, "in math component")
+    console.log(this.props, "in math component")
     return(
       <div className="mathbox">
         <div className="aside">
@@ -28,8 +28,9 @@ class Math extends Component {
         </div>
         <div className="demo-box">
             <h2>Basic Math Problems</h2>
-            <h3>{this.props.match.params.name}</h3>
+            <h3></h3>
         </div>
+        <Link to="/demos"><button>Back</button></Link>
       </div>
     )
   }
