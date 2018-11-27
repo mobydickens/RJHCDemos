@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import demoArray from './demoArray';
-import { Redirect } from 'react-router-dom';
 
 class Demos extends Component {
 

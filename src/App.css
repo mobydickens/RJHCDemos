@@ -63,9 +63,13 @@ font-family: 'Share Tech Mono', monospace; */
   margin: 100px 0;
   width: 500px;
   height: 500px;
-  display: inline-block;
+  text-align: center;
   background-color: lightgray;
 }
+
+/* .results {
+  
+} */
 
 /* math demo box */
 .aside {
