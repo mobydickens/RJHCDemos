@@ -4,6 +4,7 @@ import EvenOdd from './EvenOdd.jsx';
 import Palindrome from './Palindrome.jsx';
 import Subtraction from './Difference.jsx';
 import Multiply from './Multiply.jsx';
+import Division from './Division.jsx';
 
 export default [
     {
@@ -25,5 +26,9 @@ export default [
     {
         component: <Multiply />,
         name: "Multiply"
+    },
+    {
+        component: <Division />,
+        name: "Division"
     }
 ]

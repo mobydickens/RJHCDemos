@@ -23,7 +23,7 @@ class Multiply extends Component {
         }) 
      }
 
-    subtract = (num1, num2) => {
+    multiply = (num1, num2) => {
         this.setState({
             multiply: num1 * num2,
             num1: "",
@@ -38,7 +38,7 @@ class Multiply extends Component {
                 <input type="text" onChange={ (e) => this.changeNum1(e.target.value) } value={ this.state.num1 }/><br/>
                 * <br/> 
                 <input type="text" onChange={ (e) => this.changeNum2(e.target.value) } value={ this.state.num2 }/><br/>
-                <button className="btn btn-primary" onClick={ () => this.subtract(this.state.num1, this.state.num2) }>Calculate!</button>
+                <button className="btn btn-primary" onClick={ () => this.multiply(this.state.num1, this.state.num2) }>Calculate!</button>
                 <div className="results">{ this.state.multiply }</div>
             </div>
         )
