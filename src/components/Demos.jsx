@@ -8,6 +8,7 @@ class Demos extends Component {
         this.state = {
             demos: [
                 "Sum",
+                "Subtraction",
                 "Even and Odd",
                 "Palindrome"
             ]

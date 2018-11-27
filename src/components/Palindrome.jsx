@@ -22,11 +22,13 @@ class Palindrome extends Component {
         let backwards = alteredWord.split('').reverse().join('');
         if(alteredWord === backwards) {
             this.setState({
-                result: `${word} is a palindrome!`
+                result: `${word} is a palindrome!`,
+                word: ""
             })
         } else {
             this.setState({
-                result: `${word} is not a palindrome!`
+                result: `${word} is not a palindrome!`,
+                word: ""
             })
         }
     }
