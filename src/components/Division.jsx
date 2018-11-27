@@ -46,3 +46,5 @@ class Division extends Component {
 }
 
 export default Division;
+
+// need to rewrite the math to be one component since they are so similiar

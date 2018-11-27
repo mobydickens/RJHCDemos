@@ -5,8 +5,9 @@ import { HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home.jsx';
 import Demos from './components/Demos.jsx';
 import About from './components/About.jsx';
-import NotFound from './components/NotFound.jsx';
 import Demo from './components/Demo.jsx';
+import Math from './components/Math.jsx'
+import NotFound from './components/NotFound.jsx';
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
             <Route component={ Demos } path="/demos"/>
             <Route component={ About } path="/about" />
             <Route component={ Demo } path="/demo/:name" />
+            <Route component={ Math } path="/math/:name" />
             <Route component={ NotFound } />
           </Switch>
         </div>

@@ -53,10 +53,25 @@ font-family: 'Share Tech Mono', monospace; */
   text-align: center;
 }
 
+.mathbox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .demo-box {
-  margin: 100px 20px;
+  margin: 100px 0;
   width: 500px;
   height: 500px;
   display: inline-block;
   background-color: lightgray;
+}
+
+/* math demo box */
+.aside {
+  background-color: lightblue;
+  width: 100px;
+  height: 500px;
+  margin: 100px 0;
+  color: white;
 }
