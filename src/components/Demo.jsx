@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Sum from './Sum.jsx';
 import EvenOdd from './EvenOdd.jsx';
+import Palindrome from './Palindrome.jsx';
 
 class Demo extends Component {
 
@@ -16,14 +17,16 @@ class Demo extends Component {
                 {
                     component: <EvenOdd />,
                     name: "Even and Odd"
+                },
+                {
+                    component: <Palindrome />,
+                    name: "Palindrome"
                 }
             ]
         }
     }
 
     render() {
-
-        console.log(this.props.match.params);
 
         return(
             <div className="container">

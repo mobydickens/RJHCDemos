@@ -5,41 +5,40 @@ class Palindrome extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            num1: "",
-            num2: "",
-            sum: ""
+            word: "",
+            result: ""
         }
     }
 
-    changeNum1 = (value) => {
-       this.setState({
-            num1: Number(value)
-       }) 
-    }
-
-    changeNum2 = (value) => {
+    onChange = (value) => {
         this.setState({
-            num2: Number(value)
-        }) 
-     }
-
-    add = (num1, num2) => {
-        this.setState({
-            sum: num1 + num2,
-            num1: "",
-            num2: ""
+            word: value
         })
     }
+
+    palindromeCheck = (word) => {
+        let regex = /([\W\d\s])+/;
+        let alteredWord = word.replace(regex, '');
+        let backwards = alteredWord.split('').reverse().join('');
+        if(alteredWord === backwards) {
+            this.setState({
+                result: `${word} is a palindrome!`
+            })
+        } else {
+            this.setState({
+                result: `${word} is not a palindrome!`
+            })
+        }
+    }
+
 
     render() {
         return(
             <div className="demo-box">
-                <h2>Calculate the Sum</h2>
-                <input type="text" onChange={ (e) => this.changeNum1(e.target.value) } value={ this.state.num1 }/><br/>
-                +<br/> 
-                <input type="text" onChange={ (e) => this.changeNum2(e.target.value) } value={ this.state.num2 }/><br/>
-                <button className="btn btn-primary" onClick={ () => this.add(this.state.num1, this.state.num2) }>Calculate!</button>
-                <div className="results">{ this.state.sum }</div>
+                <h2>Check for Palindromes</h2>
+                <input type="text" onChange={ (e) => this.onChange(e.target.value) } value={ this.state.word }/><br/>
+                <button className="btn btn-primary" onClick={ () => this.palindromeCheck(this.state.word) }>Test!</button>
+                <div className="results">{this.state.result}</div>
             </div>
         )
     }
