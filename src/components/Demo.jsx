@@ -1,33 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Sum from './Sum.jsx';
-import EvenOdd from './EvenOdd.jsx';
-import Palindrome from './Palindrome.jsx';
-import Subtraction from './Subtraction.jsx';
+import demoArray from './demoArray';
 
 class Demo extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            demos: [
-                {
-                    component: <Sum />,
-                    name: "Sum"
-                },
-                {
-                    component: <Subtraction />,
-                    name: "Subtraction"
-                },
-                {
-                    component: <EvenOdd />,
-                    name: "Even and Odd"
-                },
-                {
-                    component: <Palindrome />,
-                    name: "Palindrome"
-                }
-            ]
+            demos: demoArray
         }
     }
 

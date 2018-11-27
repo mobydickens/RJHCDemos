@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import demoArray from './demoArray';
 
 class Demos extends Component {
 
     constructor(props) {
         super(props); 
         this.state = {
-            demos: [
-                "Sum",
-                "Subtraction",
-                "Even and Odd",
-                "Palindrome"
-            ]
+            demos: demoArray
         }
     }
 
@@ -19,8 +15,8 @@ class Demos extends Component {
         let demoList = this.state.demos.map((demo, i) => {
             return(
                 <div key={i}>
-                    <Link to={`/demo/${demo}`}>
-                        <li>{demo}</li>
+                    <Link to={`/demo/${demo.name}`}>
+                        <li>{demo.name}</li>
                     </Link>
                 </div>
             )
