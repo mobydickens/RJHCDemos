@@ -118,7 +118,7 @@ class Math extends Component {
 
   resetResults = () => {
     this.setState({
-      results: ""
+      result: ""
     })
   }
 
@@ -133,10 +133,8 @@ class Math extends Component {
               if(demo.componentName === "mathDemos") {
                 return(
                   <div key={index}>
-                    <Link
-                      // onClick={ this.resetResults() } 
-                      to={`/math/${demo.name}`}>{demo.name}
-                    
+                    <Link to={`/math/${demo.name}`}>
+                      <button onClick={ this.resetResults }>{demo.name}</button>
                     </Link>
                   </div>
                 )
