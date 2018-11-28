@@ -16,23 +16,40 @@ class Math extends Component {
   }
 
   changeNum1 = (value) => {
-    this.setState({
-         num1: value
-    }) 
- }
-
- changeNum2 = (value) => {
-     this.setState({
-         num2: value
-     }) 
-  }
-
-  sum = (num1, num2) => {
-    if(isNaN(num1) || isNaN(num2)) {
+    if(isNaN(value)) {
       this.setState({
         num1: "",
         num2: "",
-        error: "Only numbers can be added!"
+        error: "Only input numbers!"
+      })
+    } else {
+    this.setState({
+         num1: value,
+         error: ""
+    }) 
+  }
+ }
+
+ changeNum2 = (value) => {
+  if(isNaN(value)) {
+    this.setState({
+      num1: "",
+      num2: "",
+      error: "Only input numbers!"
+    })
+  } else {
+     this.setState({
+         num2: value
+     }) 
+    }
+  }
+
+  sum = (num1, num2) => {
+    if (num1 === "" || num2 === "") {
+      this.setState({
+        num1: "",
+        num2: "",
+        error: "Please input valid numbers!"
       })
     } else {
       let sum = parseInt(num1) + parseInt(num2);
@@ -46,11 +63,11 @@ class Math extends Component {
   }
 
   difference = (num1, num2) => {
-    if(isNaN(num1) || isNaN(num2)) {
+    if (num1 === "" || num2 === "") {
       this.setState({
         num1: "",
         num2: "",
-        error: "Only numbers can be subtracted!"
+        error: "Please input valid numbers!"
       })
     } else {
       let difference = parseInt(num1) - parseInt(num2);
@@ -61,6 +78,48 @@ class Math extends Component {
         error: ""
       })
     }
+  }
+
+  divide = (num1, num2) => {
+    if (num1 === "" || num2 === "") {
+      this.setState({
+        num1: "",
+        num2: "",
+        error: "Please input valid numbers!"
+      })
+    } else {
+      let division = parseInt(num1) / parseInt(num2);
+      this.setState({
+        result: division,
+        num1: "",
+        num2: "",
+        error: ""
+      })
+    }
+  }
+
+  multiply = (num1, num2) => {
+    if (num1 === "" || num2 === "") {
+      this.setState({
+        num1: "",
+        num2: "",
+        error: "Please input valid numbers!"
+      })
+    } else {
+      let multiply = parseInt(num1) * parseInt(num2);
+      this.setState({
+        result: multiply,
+        num1: "",
+        num2: "",
+        error: ""
+      })
+    }
+  }
+
+  resetResults = () => {
+    this.setState({
+      results: ""
+    })
   }
 
   render() {
@@ -74,7 +133,11 @@ class Math extends Component {
               if(demo.componentName === "mathDemos") {
                 return(
                   <div key={index}>
-                    <Link to={`/math/${demo.name}`}>{demo.name}</Link>
+                    <Link
+                      // onClick={ this.resetResults() } 
+                      to={`/math/${demo.name}`}>{demo.name}
+                    
+                    </Link>
                   </div>
                 )
               }
@@ -103,7 +166,8 @@ class Math extends Component {
                 className="btn btn-primary"
                 onClick={ params.name === "Sum" ? () => this.sum(num1, num2) 
                             : params.name === "Difference" ? () => this.difference(num1, num2)
-                            : ""}>
+                            : params.name === "Division" ? () => this.divide(num1, num2)
+                            : params.name === "Multiply" ? () => this.multiply(num1, num2) : "" }>
                 Calculate!
               </button>
               <div className="results">{ this.state.error !== "" ? this.state.error : this.state.result }</div>
